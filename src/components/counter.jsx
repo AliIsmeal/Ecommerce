@@ -5,15 +5,18 @@ class Counter extends Component {
     count: 0
   };
 
-  handeIncrement = () => {
-    this.setState({ count: this.state.count+1 });
+  handeIncrement = e => {
+    console.log(e);
+    
+    this.setState({ count: this.state.count + 1 });
   };
   render() {
+    var j=1;
     return (
       <div>
         <span className={this.getBagdeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handeIncrement}
+          onClick={() => this.handeIncrement(j)}
           className="btn btn-secondary btn-sm"
         >
           Increment
